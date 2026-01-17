@@ -1,0 +1,9 @@
+EventBridge (schedule)
+        ↓
+Lambda: ingest_api_data (Python, API)
+        ↓
+S3 (raw data zone)
+        ↓
+Lambda: load_to_redshift
+        ↓
+Redshift (analytics)
