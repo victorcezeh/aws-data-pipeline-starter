@@ -10,7 +10,7 @@ except Exception as e:
 
 log_file = os.getenv("LOG_FILE_PATH")
 
-def logging_config():
+def logging_configuration():
     try:
         if not log_file:
             raise TypeError("LOG_FILE_PATH is not set or is None")
@@ -25,21 +25,21 @@ def logging_config():
     
     except TypeError as e:
         print(f"Error: Log file path invalid: {e}.")
+        return logging.getLogger()
     
     except PermissionError:
         print(f"Permission denied: Cannot write to {log_file}.")
+        return logging.getLogger()
 
     except FileNotFoundError:
         print(f"File path not found: {log_file}")
+        return logging.getLogger()
     
     except Exception as e:
         print(f"ERROR: Logging setup failed to complete {e}")
         logging.basicConfig(level=logging.INFO, format="%(levelname)s:%(message)s")
         logging.warning("Falling back to basic level configuration.")
+        return logging.getLogger()
 
 if __name__ == "__main__":
-    try:
-        logger = logging_config()
-        logger.info("Testing 1,2,3!")
-    except AttributeError:
-        print("There is a problem with your function!")
+    logging_configuration()
