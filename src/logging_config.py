@@ -11,10 +11,11 @@ except Exception as e:
 log_file = os.getenv("LOG_FILE_PATH")
 
 def logging_configuration():
-    try:
-        if not log_file:
-            raise TypeError("LOG_FILE_PATH is not set or is None")
 
+    if not log_file:
+            print("ERROR: LOG_FILE_PATH is not set or is none!")
+            return logging.getLogger()
+    try:
         logging.basicConfig(level=logging.DEBUG, 
         format="%(asctime)s:%(levelname)s:%(message)s",
         handlers=[logging.FileHandler(filename=log_file, 
@@ -22,10 +23,6 @@ def logging_configuration():
         logger = logging.getLogger()
         logging.info("Logging setup complete!")
         return logger
-    
-    except TypeError as e:
-        print(f"Error: Log file path invalid: {e}.")
-        return logging.getLogger()
     
     except PermissionError:
         print(f"Permission denied: Cannot write to {log_file}.")
