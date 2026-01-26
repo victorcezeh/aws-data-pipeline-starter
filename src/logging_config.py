@@ -1,14 +1,6 @@
 import os
 import logging
-from dotenv import load_dotenv
-
-try:
-
- load_dotenv()
-except Exception as e:
-    print(f"Failed to load the .env file {e}")
-
-log_file = os.getenv("LOG_FILE_PATH")
+from config import log_file
 
 def logging_configuration():
 
