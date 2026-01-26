@@ -1,9 +1,9 @@
-EventBridge (schedule)
-        ↓
-Lambda: ingest_api_data (Python, API)
-        ↓
-S3 (raw data zone)
-        ↓
-Lambda: load_to_redshift
-        ↓
-Redshift (analytics)
+API
+ ↓
+api_fetcher.py   (writes objects to S3)
+ ↓   (S3 event notification)
+Lambda
+ ↓
+lambda_transform.py   (reads S3 event payload, transforms)
+ ↓
+redshift_writer.py    (loads into Redshift)
