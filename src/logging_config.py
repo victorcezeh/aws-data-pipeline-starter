@@ -13,6 +13,7 @@ def logging_configuration():
         handlers=[logging.FileHandler(filename=log_file, 
         mode="w"), logging.StreamHandler()])
         logger = logging.getLogger()
+        logging.getLogger("urllib3").setLevel(logging.WARNING)
         logging.info("Logging setup complete!")
         return logger
     
