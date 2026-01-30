@@ -9,4 +9,5 @@ bucket_name=os.getenv("AWS_BUCKET_NAME")
 bucket_region=os.getenv("AWS_BUCKET_REGION")
 base_url=os.getenv("BASE_URL")
 end_point=os.getenv("END_POINT")
+url = f"{os.getenv('BASE_URL')}{os.getenv('END_POINT')}"
 log_file=os.getenv("LOG_FILE_PATH")

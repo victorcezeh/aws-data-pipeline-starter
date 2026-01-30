@@ -1,12 +1,11 @@
 import os
 import json
-import boto3
+# import boto3
 import requests
-from config import base_url, end_point
+from config import url
 from logging_config import logging_configuration
 
 logger = logging_configuration()
-url = base_url + end_point
 
 try:
     logger.info("Data Platform Testing - 1,2,3!")
