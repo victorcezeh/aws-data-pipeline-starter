@@ -11,7 +11,7 @@ url = base_url + end_point
 try:
     logger.info("Data Platform Testing - 1,2,3!")
 except AttributeError:
-    print("There is a problem with your function!")
+    logger.info("There is a problem with your function!")
 
 def fetch_api_data(api_url):
     try:

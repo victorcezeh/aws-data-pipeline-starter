@@ -11,22 +11,22 @@ def logging_configuration():
         logging.basicConfig(level=logging.DEBUG, 
         format="%(asctime)s:%(levelname)s:%(message)s",
         handlers=[logging.FileHandler(filename=log_file, 
-        mode="w"), logging.StreamHandler()])
+        mode="a"), logging.StreamHandler()])
         logger = logging.getLogger()
         logging.getLogger("urllib3").setLevel(logging.WARNING)
         logging.info("Logging setup complete!")
         return logger
     
     except PermissionError:
-        print(f"Permission denied: Cannot write to {log_file}.")
+        logging.warning(f"Permission denied: Cannot write to {log_file}.")
         return logging.getLogger()
 
     except FileNotFoundError:
-        print(f"File path not found: {log_file}")
+        logging.warning(f"File path not found: {log_file}")
         return logging.getLogger()
     
     except Exception as e:
-        print(f"ERROR: Logging setup failed to complete {e}")
+        logging.warning(f"ERROR: Logging setup failed to complete {e}")
         logging.basicConfig(level=logging.INFO, format="%(levelname)s:%(message)s")
         logging.warning("Falling back to basic level configuration.")
         return logging.getLogger()
