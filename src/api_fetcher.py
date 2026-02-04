@@ -1,6 +1,3 @@
-import os
-import json
-# import boto3
 import requests
 from config import url
 from logging_config import logging_configuration
@@ -17,8 +14,12 @@ def fetch_api_data(api_url):
         response = requests.get(api_url)
         response.raise_for_status()
         logger.info(f"Request Successful!: {response.status_code}")
-        # simpsons_data = response.json()
-        # print(simpsons_data) and then return simpsons_data later
+        api_data = response.json()
+        # print(type(api_data))
+        # print(api_data)
+        first_record = api_data[0]
+        print(first_record)
+        # return api_data
     except requests.exceptions.HTTPError as e:
         logger.warning(f"HTTP ERROR: {e}")
     except requests.exceptions.RequestException as e:
