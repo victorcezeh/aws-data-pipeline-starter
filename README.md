@@ -1,4 +1,4 @@
-# Project Structure
+# Project Structure (prototype)
 ```
 aws-data-pipeline-starter/
 │
