@@ -33,6 +33,7 @@ aws-data-pipeline-starter/
 ├── README.md
 └── requirements.txt               # Python dependencies
 ```
+```
 main_stack orchestrator
  ├── vpc_stack
  ├── iam_stack
@@ -45,3 +46,4 @@ PrivateSubnetIds
 PublicSubnetIds
 LambdaSecurityGroup
 RedshiftSecurityGroup
+```
