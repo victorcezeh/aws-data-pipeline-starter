@@ -8,7 +8,7 @@ aws-data-pipeline-starter/
 │   ├── redshift.yaml              # Redshift cluster / tables
 │   ├── s3.yaml                    # S3 buckets
 │   └── lambda.yaml                # Lambda setup + triggers
-│
+│   └── vpc.yaml                   # For Isolated Network env in AWS
 ├── lambdas/                       # Lambda handlers (entrypoints)
 │   ├── ingest_handler.py          # API → S3
 │   └── process_handler.py         # S3 → transform → Redshift
@@ -33,3 +33,15 @@ aws-data-pipeline-starter/
 ├── README.md
 └── requirements.txt               # Python dependencies
 ```
+main_stack orchestrator
+ ├── vpc_stack
+ ├── iam_stack
+ ├── s3_stack
+ ├── lambda_stack (uses VPC outputs)
+ └── redshift_stack (uses VPC outputs)
+
+ VpcId Ouputs
+PrivateSubnetIds
+PublicSubnetIds
+LambdaSecurityGroup
+RedshiftSecurityGroup
