@@ -41,7 +41,7 @@ main_stack orchestrator
  ├── lambda_stack (uses VPC outputs)
  └── redshift_stack (uses VPC outputs)
 
- VpcId Ouputs
+VpcId Ouputs
 PrivateSubnetIds
 PublicSubnetIds
 LambdaSecurityGroup
