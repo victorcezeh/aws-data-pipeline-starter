@@ -1,49 +1,36 @@
-# Project Structure (prototype)
+# AWS Data Pipeline Starter
+
+## Project Structure
+
 ```
 aws-data-pipeline-starter/
 │
-├── infrastructure/                # Infrastructure as code
-│   ├── main_stack.yaml            # Root stack including all other stacks
-│   ├── iam.yaml                   # Roles and permissions
-│   ├── redshift.yaml              # Redshift cluster / tables
-│   ├── s3.yaml                    # S3 buckets
-│   └── lambda.yaml                # Lambda setup + triggers
-│   └── vpc.yaml                   # For Isolated Network env in AWS
-├── lambdas/                       # Lambda handlers (entrypoints)
-│   ├── ingest_handler.py          # API → S3
-│   └── process_handler.py         # S3 → transform → Redshift
+├── infrastructure/                  # CloudFormation stacks
+│   ├── main_stack.yaml              # Root stack — orchestrates all nested stacks
+│   ├── vpc.yaml                     # VPC, private/public subnets, security groups
+│   ├── iam.yaml                     # Roles and permissions
+│   ├── s3.yaml                      # S3 buckets and event notification config
+│   ├── lambda.yaml                  # Lambda function, trigger, and VPC config
+│   └── redshift.yaml                # Redshift cluster and table setup
+│
+├── lambdas/
+│   └── process_handler.py           # Lambda entrypoint: reads S3 → transforms → loads Redshift
+│
+├── src/                             # Reusable modules
+│   ├── __init__.py
+│   ├── api_fetcher.py               # Calls the external API
+│   ├── s3_writer.py                 # Writes raw JSON to S3 (runs locally)
+│   ├── s3_reader.py                 # Fetches S3 object content (used by Lambda)
+│   ├── transformer.py               # Transforms raw data before loading (used by Lambda)
+│   ├── redshift_writer.py           # Executes COPY command into Redshift (used by Lambda)
+│   ├── config.py                    # Environment variable helpers and constants
+│   └── logging_config.py            # Logging setup
 │
 ├── logs/
 │   └── log_file
 │
-├── src/                           # Reusable logic
-│   ├── __pycache__/
-│   ├── __init__.py                # makes src a package
-│   ├── api_fetcher.py             # API fetch logic
-│   ├── config.py                  # constants or env var helpers
-│   ├── logging_config.py          # logging setup
-│   ├── redshift_writer.py         # Redshift COPY logic
-│   ├── s3_reader.py               # reads S3 objects
-│   ├── s3_writer.py               # writes raw or transformed data to S3
-│   └── transformer.py             # pure transform logic
-│
 ├── .env
 ├── .gitignore
-├── architecture.txt
-├── README.md
-└── requirements.txt               # Python dependencies
-```
-```
-main_stack orchestrator
- ├── vpc_stack
- ├── iam_stack
- ├── s3_stack
- ├── lambda_stack (uses VPC outputs)
- └── redshift_stack (uses VPC outputs)
-
-VpcId Ouputs
-PrivateSubnetIds
-PublicSubnetIds
-LambdaSecurityGroup
-RedshiftSecurityGroup
+├── requirements.txt
+└── README.md
 ```
