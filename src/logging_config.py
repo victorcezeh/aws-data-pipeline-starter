@@ -8,7 +8,7 @@ def logging_configuration():
             print("ERROR: LOG_FILE_PATH is not set or is none!")
             return logging.getLogger()
     try:
-        logging.basicConfig(level=logging.DEBUG, 
+        logging.basicConfig(level=logging.INFO, 
         format="%(asctime)s:%(levelname)s:%(message)s",
         handlers=[logging.FileHandler(filename=log_file, 
         mode="a"), logging.StreamHandler()])

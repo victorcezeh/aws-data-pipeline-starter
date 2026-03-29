@@ -1,8 +1,8 @@
+import logging
 import requests
 from config import url
-from logging_config import logging_configuration
 
-logger = logging_configuration()
+logger = logging.getLogger(__name__)
 
 try:
     logger.info("Data Platform Testing - 1,2,3!")
@@ -17,12 +17,12 @@ def fetch_api_data(api_url):
         api_data = response.json()
         # print(type(api_data))
         # print(api_data)
-        first_record = api_data[0]
-        print(first_record)
-        # return api_data
+        # first_record = api_data[0]
+        # print(first_record)
+        return api_data
     except requests.exceptions.HTTPError as e:
         logger.warning(f"HTTP ERROR: {e}")
     except requests.exceptions.RequestException as e:
         logger.warning(f"Request Failed! {e}")
 
-fetch_api_data(url)
+# fetch_api_data(url)
