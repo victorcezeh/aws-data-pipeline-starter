@@ -1,5 +1,6 @@
 import logging
 import requests
+
 # from config import url
 
 logger = logging.getLogger(__name__)
@@ -8,6 +9,7 @@ try:
     logger.info("Data Platform Testing - 1,2,3!")
 except AttributeError:
     logger.info("There is a problem with your function!")
+
 
 def fetch_api_data(api_url):
     try:
@@ -24,5 +26,6 @@ def fetch_api_data(api_url):
         logger.warning(f"HTTP ERROR: {e}")
     except requests.exceptions.RequestException as e:
         logger.warning(f"Request Failed! {e}")
+
 
 # fetch_api_data(url)

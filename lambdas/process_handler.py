@@ -5,6 +5,7 @@ from src.logging_config import logging_configuration
 
 logger = logging_configuration()
 
+
 def process_handler(event, context):
     raw_data = read_from_s3(event)
     transformed = transform_data(raw_data)
