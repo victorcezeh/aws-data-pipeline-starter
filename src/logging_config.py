@@ -1,4 +1,3 @@
-import os
 import logging
 from config import log_file
 

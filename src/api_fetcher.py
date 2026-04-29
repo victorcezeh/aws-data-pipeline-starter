@@ -1,6 +1,6 @@
 import logging
 import requests
-from config import url
+# from config import url
 
 logger = logging.getLogger(__name__)
 
