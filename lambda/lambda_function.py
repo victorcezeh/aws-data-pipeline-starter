@@ -7,6 +7,10 @@ logger = logging_configuration()
 
 
 def process_handler(event, context):
+    if "Records" not in event:
+        logger.error("Invalid event format")
+        return
+    
     raw_data = read_from_s3(event)
     transformed = transform_data(raw_data)
     write_to_redshift(transformed)

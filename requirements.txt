@@ -11,7 +11,9 @@ idna==3.11
 jmespath==1.0.1
 mypy-boto3-s3==1.42.67
 mypy_extensions==1.1.0
+numpy==2.4.4
 packaging==26.2
+pandas==3.0.2
 pathspec==1.1.1
 platformdirs==4.9.6
 python-dateutil==2.9.0.post0
@@ -22,4 +24,5 @@ s3transfer==0.16.0
 six==1.17.0
 types-awscrt==0.31.3
 types-s3transfer==0.16.0
+tzdata==2026.2
 urllib3==2.6.3

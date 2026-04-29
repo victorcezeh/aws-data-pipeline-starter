@@ -20,6 +20,6 @@ def write_to_s3(api_data):
     except Exception as e:
         logger.error(f"API data failed to load into S3: {e}")
 
-
-data = fetch_api_data(url)
-write_to_s3(data)
+if __name__ == "__main__":
+    data = fetch_api_data(url)
+    write_to_s3(data)
