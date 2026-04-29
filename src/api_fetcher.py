@@ -1,6 +1,5 @@
 import logging
 import requests
-import boto3
 
 # from config import url
 
