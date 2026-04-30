@@ -267,3 +267,12 @@ b''
 2026-04-30 12:47:50,468:INFO:API data loaded successfully into S3
 2026-04-30 12:47:50,681:INFO:Local files saved
 2026-04-30 12:47:50,681:INFO:Pipeline completed successfully
+2026-04-30 22:28:58,990:INFO:Logging setup complete!
+2026-04-30 22:28:58,991:INFO:Project begins!
+2026-04-30 22:29:02,160:INFO:Request Successful!: 200
+2026-04-30 22:29:02,263:INFO:Data transformed successfully | rows=6722
+2026-04-30 22:29:02,266:INFO:Beginning API data loading to S3...
+2026-04-30 22:29:02,284:INFO:Found credentials in environment variables.
+2026-04-30 22:29:10,916:INFO:API data loaded successfully into S3
+2026-04-30 22:29:11,111:INFO:Local files saved
+2026-04-30 22:29:11,112:INFO:Pipeline completed successfully
