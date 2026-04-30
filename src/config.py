@@ -16,3 +16,5 @@ key = os.getenv("KEY")
 
 # Log file path
 log_file = os.getenv("LOG_FILE_PATH")
+csv_file_path = os.getenv("CSV_FILE_PATH")
+json_file_path = os.getenv("JSON_FILE_PATH")

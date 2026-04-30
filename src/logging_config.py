@@ -1,12 +1,12 @@
 import logging
 from config import log_file
 
-
 def logging_configuration():
 
     if not log_file:
         print("ERROR: LOG_FILE_PATH is not set or is none!")
         return logging.getLogger()
+
     try:
         logging.basicConfig(
             level=logging.INFO,
@@ -16,9 +16,11 @@ def logging_configuration():
                 logging.StreamHandler(),
             ],
         )
+
         logger = logging.getLogger()
         logging.getLogger("urllib3").setLevel(logging.WARNING)
-        logging.info("Logging setup complete!")
+
+        logger.info("Logging setup complete!")
         return logger
 
     except PermissionError:
@@ -30,11 +32,7 @@ def logging_configuration():
         return logging.getLogger()
 
     except Exception as e:
-        logging.warning(f"ERROR: Logging setup failed to complete {e}")
+        logging.warning(f"ERROR: Logging setup failed: {e}")
         logging.basicConfig(level=logging.INFO, format="%(levelname)s:%(message)s")
-        logging.warning("Falling back to basic level configuration.")
+        logging.warning("Falling back to basic configuration.")
         return logging.getLogger()
-
-
-if __name__ == "__main__":
-    logging_configuration()

@@ -245,3 +245,25 @@ b''
 2026-03-29 03:44:58,198:INFO:Beginning API data loading to S3.....
 2026-03-29 03:44:58,330:INFO:Found credentials in environment variables.
 2026-03-29 03:45:01,290:INFO:API data loaded successfully into S3!
+2026-04-30 11:05:27,471:INFO:Logging setup complete!
+2026-04-30 11:05:27,476:INFO:Saving raw JSON and flattened CSV locally...
+2026-04-30 11:05:30,665:INFO:Request Successful!: 200
+2026-04-30 11:05:31,002:INFO:Files saved: raw.json, flattened.csv
+2026-04-30 12:21:05,980:INFO:Logging setup complete!
+2026-04-30 12:21:05,983:INFO:Project begins!
+2026-04-30 12:21:08,742:INFO:Request Successful!: 200
+2026-04-30 12:21:08,901:INFO:Data transformed successfully | rows=6722
+2026-04-30 12:21:08,901:INFO:Beginning API data loading to S3...
+2026-04-30 12:21:08,922:INFO:Found credentials in environment variables.
+2026-04-30 12:21:14,466:INFO:API data loaded successfully into S3
+2026-04-30 12:21:14,796:INFO:Local files saved
+2026-04-30 12:21:14,805:INFO:Pipeline completed successfully
+2026-04-30 12:47:41,654:INFO:Logging setup complete!
+2026-04-30 12:47:41,655:INFO:Project begins!
+2026-04-30 12:47:45,948:INFO:Request Successful!: 200
+2026-04-30 12:47:46,037:INFO:Data transformed successfully | rows=6722
+2026-04-30 12:47:46,037:INFO:Beginning API data loading to S3...
+2026-04-30 12:47:46,056:INFO:Found credentials in environment variables.
+2026-04-30 12:47:50,468:INFO:API data loaded successfully into S3
+2026-04-30 12:47:50,681:INFO:Local files saved
+2026-04-30 12:47:50,681:INFO:Pipeline completed successfully
